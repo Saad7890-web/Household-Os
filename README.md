@@ -270,20 +270,6 @@ v4   →  Property manager tier (tenant management, maintenance vendor tracking)
 
 ---
 
-## Why This Becomes a Real Company
-
-1. **Daily retention built-in.** The grocery list alone is touched 3–4x per week. Bills and chores keep people coming back without any re-engagement campaigns.
-
-2. **Organic virality.** Every new house member is a new user. One person creates a house and invites 3–5 people. CAC approaches zero.
-
-3. **Wedge into a massive market.** Start with individual households, expand to student housing, then property management. The enterprise version sells itself once landlords see their tenants using it.
-
-4. **Switching cost compounds.** Once a group has 6 months of expense history, maintenance logs, and documents in one place, they don't leave.
-
-5. **No strong incumbent.** Splitwise handles expenses. OurHome handles chores. No one does everything in a single, well-designed product built for daily living.
-
----
-
 ## Project Structure
 
 ```
@@ -333,7 +319,7 @@ household-os/
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/household-os
+git clone https://github.com/Saad7890-web/Household-Os.git
 cd household-os
 
 # Backend setup
