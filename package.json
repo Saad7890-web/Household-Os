@@ -1,0 +1,12 @@
+{
+  "name": "household-os",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev": "pnpm --filter @household-os/api dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "rm -rf apps/*/dist packages/*/dist"
+  }
+}
