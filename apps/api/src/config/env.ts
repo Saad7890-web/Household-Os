@@ -13,15 +13,23 @@ const envSchema = z.object({
     .enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"])
     .default("info"),
   CORS_ORIGIN: z.string().default("http://localhost:5173"),
+
+  DATABASE_URL: z.string().min(1, "DATABASE_URL is required"),
+  DB_MAX_POOL_SIZE: z.coerce.number().int().positive().default(20),
+  DB_IDLE_TIMEOUT_MS: z.coerce.number().int().positive().default(10000),
+  DB_CONNECTION_TIMEOUT_MS: z.coerce.number().int().positive().default(5000),
+  DB_SSL: z
+    .enum(["true", "false"])
+    .default("false")
+    .transform((value) => value === "true")
 });
 
 const parsed = envSchema.safeParse(process.env);
 
 if (!parsed.success) {
-  // Fail fast on startup, not after partial boot.
   console.error(
     "Invalid environment variables:",
-    parsed.error.flatten().fieldErrors,
+    parsed.error.flatten().fieldErrors
   );
   process.exit(1);
 }
